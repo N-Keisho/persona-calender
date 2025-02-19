@@ -1,7 +1,41 @@
 .clock
 {
-    font-size: 10px;
+    font-family: "Zen Kaku Gothic New", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 30px;
     font-weight: bold;
-    color: #333;
+    color: white;
     text-align: center;
+    /* -webkit-text-stroke: 6px black;
+    paint-order: stroke; */
+}
+
+.clock p{
+    padding: 0;
+    margin: 0;
+    
+}
+
+.clock span{
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    height: 20px;
+}
+
+h1 {
+    filter: url(#dilate);
+    color: #333;
+    font-weight: 700;
+    font-size: 72px;
+    font-family: 'Montserrat', sans-serif;
+ 
+    & + svg {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
 }
