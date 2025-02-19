@@ -3,7 +3,7 @@ const DAY_EN = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
 const TIME = ["朝", "昼", "放課後", "夜"];
 
 updateClock();
-setInterval(updateClock(), 1000);
+setInterval(() => updateClock(), 60000);
 
 function updateClock(){
     var d = new Date();
@@ -26,6 +26,8 @@ function updateClock(){
         time = TIME[3];
     }
 
-	var text = month + '/' + date + ' ' + DAY_JA[day] + ' ' + DAY_EN[day] + ' ' + time + ' ';
-	document.getElementById("clock").innerHTML = text;
+	document.getElementById('date').textContent = month + "/" + date;
+    document.getElementById('day_ja').textContent = DAY_JA[day];
+    document.getElementById('day_en').textContent = DAY_EN[day];
+    document.getElementById('time').textContent = time;
 }
