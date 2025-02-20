@@ -4,12 +4,17 @@ const path = require("node:path");
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 800,
-    height: 800,
+    width: 300,
+    height: 200,
+    x: 0,
+    y: 0,
     frame: false, // false: ウィンドウのフレームを非表示
-    transparent: true,
-    skipTaskbar: false, // true: タスクバーに表示しない
+    transparent: true, // frameがfalseのとき背景を透過する
+    skipTaskbar: true, // true: タスクバーに表示しない
     resizable: false,
+    minimizable: false,
+    maximizable: false,
+    // alwaysOnTop: true, // true: 常に最前面に表示
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
     },

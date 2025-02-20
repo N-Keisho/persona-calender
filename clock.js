@@ -13,6 +13,8 @@ function updateClock(){
 	var hour = d.getHours();
     var time = "";
 
+    hour = 16;
+
     if(hour >= 5 && hour < 11){
         time = TIME[0];
     }
