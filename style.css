@@ -11,8 +11,11 @@ body {
     font-weight: bold;
     padding: 0;
     margin: 0;
+    position: relative;
 }
 
+
+/* 縁取り */
 .date_out{
     color:white;
     filter: url(#dilate_black);
@@ -56,4 +59,102 @@ body {
         overflow: hidden;
         clip-path: inset(50%);
     }
+}
+
+
+.month{
+    font-family: "Domine", serif;
+    text-align: right;
+    position: absolute;
+    top:10px;
+    left: 10px; /*二桁のときは位置修正が必要*/
+    rotate: 10deg;
+
+    span{
+        vertical-align:5%;
+    }
+}
+
+.bar{
+    position: absolute;
+    top: 30px;
+    left: 55px;
+    rotate: 35deg;
+}
+
+.date{
+    position: absolute;
+    top: 5px;
+    left: 85px;
+    rotate: -3deg;
+
+    span{
+        vertical-align:3%;
+    }
+}
+
+.day{
+    position: absolute;
+    top: 55px;
+    left: 100px;
+    rotate: -12deg;
+    letter-spacing: -0.1em;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+
+    span{
+        vertical-align:5%;
+    }
+}
+
+.day_ja{
+    rotate: -15deg;
+    background-color: white;
+    height: 0.9em;
+    width: 0.9em;
+    text-align: center;
+    position: relative;
+    top: 8px;
+    left: 2px;
+    z-index: -1;
+    
+
+    h6{
+        margin: 0;
+        padding: 0;
+        rotate: 12deg;
+        position: relative;
+        top: 1px;
+        right: 1px;
+    }
+}
+
+.time{
+    position: absolute;
+    top: 90px;
+    left: 10px;
+    rotate: -15deg;
+    letter-spacing: -0.1em;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+
+    span{
+        vertical-align:5%;
+    }
+}
+
+.weather{
+    position: absolute;
+    top: 10px;
+    left: 170px;
+    z-index: -1;
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    rotate: -15deg;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
