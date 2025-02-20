@@ -6,7 +6,7 @@ const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
     height: 800,
-    frame: true, // false: ウィンドウのフレームを非表示
+    frame: false, // false: ウィンドウのフレームを非表示
     transparent: true,
     skipTaskbar: false, // true: タスクバーに表示しない
     resizable: false,

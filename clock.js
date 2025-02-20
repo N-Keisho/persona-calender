@@ -30,7 +30,7 @@ function updateClock(){
     month = ("0" + month).slice(-2);
     date = ("0" + date).slice(-2);
 
-    // spanを挟む
+    // spanを挟む - CSSでがたがたさせるため
     month = month.split('').join('</span><span>');
     date = date.split('').join('</span><span>');
     var day_en = DAY_EN[day].split('').map((char, index) => index % 2 === 0 ? `<span>${char}</span>` : `${char}`).join('');
