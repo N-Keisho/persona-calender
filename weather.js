@@ -14,7 +14,20 @@ function getWeather() {
             return weather;
         })
         .then(weather => {
-            document.getElementById('weather').textContent = weather;
+            if(weather.includes('雨')){
+                weather = 'rain';
+            }
+            else if(weather.includes('晴')){
+                weather = 'sunny';
+            }
+            else if(weather.includes('曇')){
+                weather = 'cloud';
+            }
+            else {
+                weather = 'cloud';
+            }
+
+            document.getElementById('weather').src = `./img/${weather}.png`;
         })
         .catch(error => {
             console.log(error);

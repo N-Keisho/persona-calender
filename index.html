@@ -3,37 +3,77 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New&display=swap"
-      rel="stylesheet"
-    />
     <title>clock</title>
   </head>
   <body>
     <div class="clock" id="clock">
-      <h1 class="clock_date" id="date">1/1</h1>
+      <div>
+        <h1 id="month" class="month date_out">5</h1>
+        <h1 class="date date_out">/</h1>
+        <h1 id="date" class="date date_out">4</h1>
+        <h2 class="day_en day_out" id="day_en">Monday</h2>
+        <h2 class="day_ja day_out" id="day_ja">月</h2>
+        <h2 class="time" id="time">昼間</h2>
+        <img src="img/sunny.png" class="weather" id="weather" />
+      </div>
       <svg aria-hidden="true">
-        <filter id="dilate">
+        <filter id="dilate_white">
           <feMorphology
             operator="dilate"
-            radius="1"
+            radius="5"
             result="DILATE"
           ></feMorphology>
           <feComposite
-            in="DILATE"
-            in2="SourceGraphic"
+            in="SourceGraphic"
+            in2="DILATE"
             operator="xor"
+            result="OUTLINE"
+          ></feComposite>
+          <feColorMatrix
+            in="OUTLINE"
+            type="matrix"
+            values="0 0 0 1  0
+                    0 0 0 1 0
+                    0 0 0 1 0
+                    0 0 0 1 0"
+            result="OUTLINE"
+          />
+          <feComposite
+            in="SourceGraphic"
+            in2="OUTLINE"
+            operator="lighter"
+          ></feComposite>
+        </filter>
+        <filter id="dilate_black">
+          <feMorphology
+            operator="dilate"
+            radius="5"
+            result="DILATE"
+          ></feMorphology>
+          <feComposite
+            in="SourceGraphic"
+            in2="DILATE"
+            operator="xor"
+            result="OUTLINE"
+          ></feComposite>
+          <feColorMatrix
+            in="OUTLINE"
+            type="matrix"
+            values="0 0 0 0  0
+                    0 0 0 0 0
+                    0 0 0 0 0
+                    0 0 0 1 0"
+            result="OUTLINE"
+          />
+          <feComposite
+            in="SourceGraphic"
+            in2="OUTLINE"
+            operator="lighter"
           ></feComposite>
         </filter>
       </svg>
-      <span><p class="clock_day_en" id="day_en">Monday</p></span>
-      <p class="clock_day_ja" id="day_ja">月</p>
-      <p class="clock_time" id="time">放課後</p>
-      <p class="clock_weather" id="weather">太陽</p>
     </div>
     <!-- <script src="clock.js"></script> -->
-    <!-- <script src="weather.js"></script> -->
+    <script src="weather.js"></script>
   </body>
 </html>
