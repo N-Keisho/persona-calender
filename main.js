@@ -1,10 +1,11 @@
 const { nativeImage, Menu } = require("electron");
-const { app, BrowserWindow,  ipcMain, Tray } = require("electron/main");
+const { app, BrowserWindow, ipcMain, Tray } = require("electron/main");
 const path = require("node:path");
+let tray = null;
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 450,
+    width: 400,
     height: 300,
     // width: 800,
     // height: 800,
@@ -16,6 +17,7 @@ const createWindow = () => {
     resizable: false,
     minimizable: false,
     maximizable: false,
+    icon: "img/icon.ico",
     // alwaysOnTop: true, // true: 常に最前面に表示
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
@@ -26,13 +28,7 @@ const createWindow = () => {
 };
 
 app.whenReady().then(() => {
-    const img = nativeImage.createFromPath('./img/icon.png');
-    let tray = new Tray(img);
-    tray.setToolTip('Clock');
-    tray.setContextMenu(Menu.buildFromTemplate([
-        {label: 'Quit', role: 'quit'}
-    ]));
-    createWindow();
+  createWindow();
 
   app.on("activate", () => {
     if (BrowserWindow.getAllWindows().length === 0) {
@@ -45,4 +41,13 @@ app.on("window-all-closed", () => {
   if (process.platform !== "darwin") {
     app.quit();
   }
+});
+
+app.on('ready', () => {
+  const img = nativeImage.createFromPath("img/icon.ico");
+  tray = new Tray(img);
+  tray.setToolTip("Persona Calendar");
+  tray.setContextMenu(
+    Menu.buildFromTemplate([{ label: "Quit", role: "quit" }])
+  );
 });

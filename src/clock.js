@@ -28,7 +28,7 @@ function loadHoliday() {
 }
 
 function updateClock(){
-    var d = new Date(2025, 0, 1);
+    var d = new Date();
 	var month = d.getMonth() + 1;
 	var date = d.getDate();
 	var day = d.getDay();
