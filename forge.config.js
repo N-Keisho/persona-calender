@@ -46,4 +46,17 @@ module.exports = {
       [FuseV1Options.OnlyLoadAppFromAsar]: true,
     }),
   ],
+  publishers: [
+    {
+      name: '@electron-forge/publisher-github',
+      config: {
+        repository: {
+          owner: 'N-Keisho',
+          name: 'persona-calender'
+        },
+        prerelease: false,
+        draft: true
+      }
+    }
+  ]
 };
