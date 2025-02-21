@@ -15,7 +15,7 @@ setInterval(() => updateClock(), 60000);
 // 祝日データを読み込む
 // 内閣府のホームページからデータを取得して更新する必要あり
 function loadHoliday() {
-    fetch(`../data/holiday${YEAR}.json`)
+    fetch(`./data/holiday${YEAR}.json`)
         .then(response => {
             return response.json();
         })
@@ -28,7 +28,7 @@ function loadHoliday() {
 }
 
 function updateClock(){
-    var d = new Date();
+    var d = new Date(2025, 0, 1);
 	var month = d.getMonth() + 1;
 	var date = d.getDate();
 	var day = d.getDay();

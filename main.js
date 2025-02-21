@@ -6,6 +6,8 @@ const createWindow = () => {
   const win = new BrowserWindow({
     width: 450,
     height: 300,
+    // width: 800,
+    // height: 800,
     x: 0,
     y: 0,
     frame: false, // false: ウィンドウのフレームを非表示
