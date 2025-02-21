@@ -4,8 +4,8 @@ const path = require("node:path");
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 300,
-    height: 200,
+    width: 450,
+    height: 300,
     x: 0,
     y: 0,
     frame: false, // false: ウィンドウのフレームを非表示

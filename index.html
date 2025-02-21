@@ -5,7 +5,10 @@
     <link rel="stylesheet" href="style.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Domine:wght@400..700&family=Noto+Sans+JP:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
     <title>clock</title>
   </head>
   <body>
@@ -16,19 +19,18 @@
       <h1 id="date" class="date date_out">0<span>5</span></h1>
       <div class="day">
         <h5 class="day_out" id="day_en">MoNDaY</h5>
-        <div class="day_ja">
+        <div class="day_ja" id="day_ja_bg">
           <h6 id="day_ja">月</h6>
         </div>
       </div>
       <h3 class="time" id="time">　昼間</h3>
       <div class="weather">
-        <img src="img/sunny.png" id="weather" width="40"/>
+        <img src="img/sunny.png" id="weather" width="40" />
       </div>
     </div>
 
     <!-- filter -->
     <svg aria-hidden="true" style="display: none">
-
       <filter id="dilate_w">
         <feMorphology
           operator="dilate"
@@ -45,9 +47,9 @@
           in="OUTLINE"
           type="matrix"
           values="0 0 0 1  0
-                    0 0 0 1 0
-                    0 0 0 1 0
-                    0 0 0 1 0"
+                  0 0 0 1 0
+                  0 0 0 1 0
+                  0 0 0 1 0"
           result="OUTLINE"
         />
         <feComposite
@@ -57,7 +59,7 @@
         ></feComposite>
       </filter>
 
-      <filter id="dilate_wbw">
+      <filter id="dilate_owow">
         <feMorphology
           operator="dilate"
           radius="2"
@@ -95,18 +97,160 @@
           in="OUTLINE"
           type="matrix"
           values="0 0 0 1  0
-                    0 0 0 1 0
-                    0 0 0 1 0
-                    0 0 0 1 0"
+                  0 0 0 1 0
+                  0 0 0 1 0
+                  0 0 0 1 0"
           result="OUTLINE"
         />
         <feColorMatrix
           in="OUTLINE3"
           type="matrix"
           values="0 0 0 1  0
-                    0 0 0 1 0
-                    0 0 0 1 0
-                    0 0 0 1 0"
+                  0 0 0 1 0
+                  0 0 0 1 0
+                  0 0 0 1 0"
+          result="OUTLINE3"
+        />
+        <feComposite
+          in="SourceGraphic"
+          in2="OUTLINE"
+          operator="lighter"
+          result="OUTLINE"
+        ></feComposite>
+        <feComposite
+          in="OUTLINE"
+          in2="OUTLINE2"
+          operator="lighter"
+          result="OUTLINE"
+        ></feComposite>
+        <feComposite
+          in="OUTLINE"
+          in2="OUTLINE3"
+          operator="lighter"
+        ></feComposite>
+      </filter>
+
+      <filter id="dilate_orow">
+        <feMorphology
+          operator="dilate"
+          radius="2"
+          result="DILATE"
+        ></feMorphology>
+        <feMorphology
+          operator="dilate"
+          radius="3"
+          result="DILATE2"
+        ></feMorphology>
+        <feMorphology
+          operator="dilate"
+          radius="3.2"
+          result="DILATE3"
+        ></feMorphology>
+        <feComposite
+          in="SourceGraphic"
+          in2="DILATE"
+          operator="xor"
+          result="OUTLINE"
+        ></feComposite>
+        <feComposite
+          in="DILATE"
+          in2="DILATE2"
+          operator="xor"
+          result="OUTLINE2"
+        ></feComposite>
+        <feComposite
+          in="DILATE2"
+          in2="DILATE3"
+          operator="xor"
+          result="OUTLINE3"
+        ></feComposite>
+        <feColorMatrix
+          in="OUTLINE"
+          type="matrix"
+          values="0 0 0 1  0
+                  0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 1 0"
+          result="OUTLINE"
+        />
+        <feColorMatrix
+          in="OUTLINE3"
+          type="matrix"
+          values="0 0 0 1  0
+                  0 0 0 1 0
+                  0 0 0 1 0
+                  0 0 0 1 0"
+          result="OUTLINE3"
+        />
+        <feComposite
+          in="SourceGraphic"
+          in2="OUTLINE"
+          operator="lighter"
+          result="OUTLINE"
+        ></feComposite>
+        <feComposite
+          in="OUTLINE"
+          in2="OUTLINE2"
+          operator="lighter"
+          result="OUTLINE"
+        ></feComposite>
+        <feComposite
+          in="OUTLINE"
+          in2="OUTLINE3"
+          operator="lighter"
+        ></feComposite>
+      </filter>
+
+      <filter id="dilate_obow">
+        <feMorphology
+          operator="dilate"
+          radius="2"
+          result="DILATE"
+        ></feMorphology>
+        <feMorphology
+          operator="dilate"
+          radius="3"
+          result="DILATE2"
+        ></feMorphology>
+        <feMorphology
+          operator="dilate"
+          radius="3.2"
+          result="DILATE3"
+        ></feMorphology>
+        <feComposite
+          in="SourceGraphic"
+          in2="DILATE"
+          operator="xor"
+          result="OUTLINE"
+        ></feComposite>
+        <feComposite
+          in="DILATE"
+          in2="DILATE2"
+          operator="xor"
+          result="OUTLINE2"
+        ></feComposite>
+        <feComposite
+          in="DILATE2"
+          in2="DILATE3"
+          operator="xor"
+          result="OUTLINE3"
+        ></feComposite>
+        <feColorMatrix
+          in="OUTLINE"
+          type="matrix"
+          values="0 0 0 0  0
+                  0 0 0 1 0
+                  0 0 0 1 0
+                  0 0 0 1 0"
+          result="OUTLINE"
+        />
+        <feColorMatrix
+          in="OUTLINE3"
+          type="matrix"
+          values="0 0 0 1  0
+                  0 0 0 1 0
+                  0 0 0 1 0
+                  0 0 0 1 0"
           result="OUTLINE3"
         />
         <feComposite
@@ -155,9 +299,9 @@
           in="OUTLINE"
           type="matrix"
           values="0 0 0 0  0
-                    0 0 0 0 0
-                    0 0 0 0 0
-                    0 0 0 1 0"
+                  0 0 0 0 0
+                  0 0 0 0 0
+                  0 0 0 1 0"
           result="OUTLINE"
         />
         <feComposite
@@ -175,7 +319,7 @@
     </svg>
 
     <!-- script -->
-    <script src="clock.js"></script>
-    <script src="weather.js"></script>
+    <script src="./src/clock.js"></script>
+    <!-- <script src="./src/weather.js"></script> -->
   </body>
 </html>
