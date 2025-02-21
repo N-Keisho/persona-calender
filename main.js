@@ -5,8 +5,8 @@ let tray = null;
 
 const createWindow = () => {
   const win = new BrowserWindow({
-    width: 400,
-    height: 300,
+    width: 430,
+    height: 250,
     // width: 800,
     // height: 800,
     x: 0,
