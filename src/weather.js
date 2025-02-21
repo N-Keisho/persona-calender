@@ -28,6 +28,7 @@ function getWeather() {
             }
 
             document.getElementById('weather').src = `./img/${weather}.png`;
+            document.getElementById('weather').style.animation = `${weather} 5s infinite`;
         })
         .catch(error => {
             console.log(error);

@@ -152,6 +152,35 @@
     }
 }
 
+@keyframes sunny {
+    0%, 100% {
+        transform: rotate(10deg);
+    }
+    50% {
+        transform: rotate(-10deg);
+    }
+}
+
+@keyframes cloud {
+    0%, 100% {
+        transform: translateY(-0.8px);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+@keyframes rain {
+    0%, 100% {
+        transform: translateY(1px);
+        transform: rotate(-5deg);
+    }
+    50% {
+        transform: translateY(-3px);
+        transform: rotate(5deg);
+    }
+}
+
 .weather{
     position: absolute;
     top: 10px;
@@ -164,4 +193,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
+    img {
+        animation: 5s sunny infinite;
+    }
+    
 }
