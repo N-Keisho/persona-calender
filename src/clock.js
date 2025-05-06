@@ -1,5 +1,5 @@
 const DAY_JA = ["日", "月", "火", "水", "木", "金", "土"];
-const DAY_EN = ["SuNDaY", "MoNDaY", "TUESDaY", "WeDNESDaY", "ThursDaY", "FRiDaY", "SATRRDaY"];
+const DAY_EN = ["SuNDaY", "MoNDaY", "TUESDaY", "WeDNESDaY", "THuRsDaY", "FRiDaY", "SATURDaY"];
 const TIME = [" 　　朝", "　昼間", "放課後", "　　夜"];
 
 const YEAR = new Date().getFullYear();
