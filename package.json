@@ -1,17 +1,24 @@
 {
   "name": "persona-calender",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "main": "main.js",
   "build": {
-  "appId": "com.nkeisho.persona-calendar",
-  "productName": "Persona Calendar",
-  "files": [
-    "**/*"
-  ],
-  "win": {
-    "target": "nsis"
-  }
-},
+    "appId": "com.nkeisho.persona-calendar",
+    "productName": "Persona Calendar",
+    "files": [
+      "**/*"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "img/favicon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": true,
+      "allowToChangeInstallationDirectory": true
+    },
+    "icon": "img/favicon.ico"
+  },
   "scripts": {
     "start": "electron .",
     "dist": "electron-builder",
@@ -22,7 +29,7 @@
   "license": "ISC",
   "description": "This is a calendar application like Persona5 with Electron.",
   "devDependencies": {
-    "electron": "^37.2.5",
+    "electron": "^34.2.0",
     "electron-builder": "^26.0.12"
   }
 }
