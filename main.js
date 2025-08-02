@@ -44,7 +44,8 @@ app.on("window-all-closed", () => {
 });
 
 app.on('ready', () => {
-  const img = nativeImage.createFromPath("img/icon.ico");
+  const iconPath = path.join(__dirname, "img", "icon.ico");
+  const img = nativeImage.createFromPath(iconPath);
   tray = new Tray(img);
   tray.setToolTip("Persona Calendar");
   tray.setContextMenu(
