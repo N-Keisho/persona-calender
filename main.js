@@ -13,7 +13,9 @@ const createWindow = () => {
     y: 0,
     frame: false, // false: ウィンドウのフレームを非表示
     transparent: true, // frameがfalseのとき背景を透過する
+    hasShadow: false, // false: ウィンドウの影を非表示
     skipTaskbar: true, // true: タスクバーに表示しない
+    titleBarStyle: "hidden", // タイトルバーを非表示にする
     resizable: false,
     minimizable: false,
     maximizable: false,
